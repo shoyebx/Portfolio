@@ -1,4 +1,26 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #eaeaea;
+  padding: 20px;
+}
+
 h1 {
-        color: teal;
-     font-size: 10px;
+  color: #333;
+}
+
+p {
+  color: #555;
+}
+
+.btn {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
 }
