@@ -13,7 +13,11 @@ header {
   padding: 20px;
   text-align: center;
 }
-
+.logo {
+  max-width: 100px;
+  display: block;
+  margin: 0 auto 10px;
+}
 /* Navigation */
 nav {
   background-color: #005bb5;
