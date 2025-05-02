@@ -1,43 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Shoyab portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header>
-  <img src="logo.jpg" alt="EduHub Logo" class="logo">
-  <h1>EduHub</h1>
-  <p>Your Gateway to Quality Education</p>
-  </header>
-<nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Courses</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-  <main>
-    <section class="course">
-      <h2>Web Development</h2>
-      <p>Learn HTML, CSS, JavaScript and more to build stunning websites.</p>
-    </section>
+ // Advanced Full Stack Website with Authentication (React + Node.js + MongoDB)
 
-    <section class="course">
-      <h2>Data Science</h2>
-      <p>Explore Python, machine learning, and data analysis.</p>
-    </section>
+// Frontend - React App (src/App.js) import React from "react"; import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"; import Templates from "./pages/Templates"; import Tutorials from "./pages/Tutorials"; import Contact from "./pages/Contact"; import Home from "./pages/Home"; import Login from "./pages/Login"; import Register from "./pages/Register"; import Navbar from "./components/Navbar";
 
-    <section class="course">
-      <h2>Digital Marketing</h2>
-      <p>Master SEO, content marketing, and social media strategies.</p>
-    </section>
-  </main>
+function App() { return ( <Router> <Navbar /> <Routes> <Route path="/" element={<Home />} /> <Route path="/templates" element={<Templates />} /> <Route path="/tutorials" element={<Tutorials />} /> <Route path="/contact" element={<Contact />} /> <Route path="/login" element={<Login />} /> <Route path="/register" element={<Register />} /> </Routes> </Router> ); }
 
-  <footer>
-    <p>&copy; 2025 EduHub. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+export default App;
+
+// Backend - server.js const express = require("express"); const mongoose = require("mongoose"); const cors = require("cors"); const bcrypt = require("bcryptjs"); const jwt = require("jsonwebtoken"); require("dotenv").config();
+
+const app = express(); app.use(cors()); app.use(express.json());
+
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+
+const User = mongoose.model("User", new mongoose.Schema({ username: { type: String, required: true, unique: true }, password: { type: String, required: true } }));
+
+const Template = mongoose.model("Template", new mongoose.Schema({ name: String, description: String, tech: String }));
+
+// Auth Routes app.post("/api/register", async (req, res) => { const { username, password } = req.body; const hashedPassword = await bcrypt.hash(password, 10); try { const user = new User({ username, password: hashedPassword }); await user.save(); res.status(201).json({ message: "User created" }); } catch (err) { res.status(400).json({ error: "User already exists" }); } });
+
+app.post("/api/login", async (req, res) => { const { username, password } = req.body; const user = await User.findOne({ username }); if (!user) return res.status(401).json({ error: "Invalid credentials" });
+
+const isMatch = await bcrypt.compare(password, user.password); if (!isMatch) return res.status(401).json({ error: "Invalid credentials" });
+
+const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" }); res.json({ token }); });
+
+// Template API app.get("/api/templates", async (req, res) => { const templates = await Template.find(); res.json(templates); });
+
+app.post("/api/templates", async (req, res) => { const newTemplate = new Template(req.body); await newTemplate.save(); res.json(newTemplate); });
+
+const PORT = process.env.PORT || 5000; app.listen(PORT, () => console.log(Server running on port ${PORT}));
+
+// .env // MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/studentwebbuilder // JWT_SECRET=your_jwt_secret
