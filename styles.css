@@ -1,5 +1,6 @@
 /* style.css */
 
+/* General Styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -7,6 +8,18 @@ body {
   color: black;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header Styles */
 header {
   background-color: lightblue;
   padding: 20px;
@@ -25,19 +38,16 @@ header {
 }
 
 nav ul {
-  list-style: none;
   display: flex;
   gap: 20px;
-  padding: 0;
-  margin: 0;
 }
 
 nav a {
-  text-decoration: none;
-  color: darkblue;
   font-weight: bold;
+  color: darkblue;
 }
 
+/* Hero Section */
 .hero {
   background-color: aliceblue;
   text-align: center;
@@ -59,6 +69,7 @@ nav a {
   cursor: pointer;
 }
 
+/* Features Section */
 .features {
   display: flex;
   justify-content: space-around;
@@ -76,10 +87,16 @@ nav a {
   font-weight: bold;
 }
 
+/* Subjects Section */
 .subjects {
   padding: 40px 20px;
   background-color: white;
   text-align: center;
+}
+
+.subjects h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
 .subject-grid {
@@ -97,6 +114,7 @@ nav a {
   font-weight: bold;
 }
 
+/* Footer Section */
 footer {
   background-color: lightgray;
   padding: 30px 20px;
@@ -114,12 +132,11 @@ footer {
 }
 
 .quick-links ul {
-  list-style: none;
   padding: 0;
 }
 
 .quick-links a {
-  text-decoration: none;
+  font-weight: bold;
   color: darkblue;
 }
 
