@@ -1,6 +1,4 @@
-/* style.css */
-
-/* General Styles */
+/* General Reset */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -8,36 +6,26 @@ body {
   color: black;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Header Styles */
+/* Header */
 header {
   background-color: lightblue;
-  padding: 20px;
+  padding: 15px 30px;
 }
 
-.nav {
+.nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   color: darkblue;
 }
 
 nav ul {
+  list-style: none;
   display: flex;
   gap: 20px;
 }
@@ -45,6 +33,7 @@ nav ul {
 nav a {
   font-weight: bold;
   color: darkblue;
+  text-decoration: none;
 }
 
 /* Hero Section */
@@ -62,40 +51,37 @@ nav a {
 .hero button {
   background-color: blue;
   color: white;
-  padding: 12px 25px;
-  font-size: 16px;
   border: none;
-  border-radius: 5px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
   cursor: pointer;
 }
 
-/* Features Section */
+/* Features */
 .features {
   display: flex;
   justify-content: space-around;
   padding: 40px 20px;
   background-color: lavender;
+  flex-wrap: wrap;
 }
 
-.feature-card {
-  background-color: white;
-  padding: 20px;
-  border: 1px solid lightgray;
-  border-radius: 8px;
+.feature {
   text-align: center;
   width: 150px;
-  font-weight: bold;
+  margin: 10px;
 }
 
-.feature-card i {
+.feature i {
+  font-size: 40px;
+  color: navy;
   margin-bottom: 10px;
-  color: darkblue;
 }
 
-/* Subjects Section */
+/* Subjects */
 .subjects {
   padding: 40px 20px;
-  background-color: white;
   text-align: center;
 }
 
@@ -108,48 +94,45 @@ nav a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 20px;
-  margin-top: 20px;
 }
 
-.subject-card {
+.subject {
   background-color: lightyellow;
   padding: 20px;
-  border: 1px solid goldenrod;
   border-radius: 8px;
-  font-weight: bold;
+  border: 1px solid goldenrod;
 }
 
-.subject-card i {
+.subject i {
+  font-size: 30px;
+  color: green;
   margin-bottom: 10px;
-  color: darkblue;
 }
 
-/* Footer Section */
+/* Footer */
 footer {
   background-color: lightgray;
   padding: 30px 20px;
   color: black;
 }
 
-.footer-info {
+.footer-content {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.footer-info h3 {
+footer h3 {
   margin-top: 0;
 }
 
 .quick-links ul {
+  list-style: none;
   padding: 0;
 }
 
 .quick-links a {
-  font-weight: bold;
   color: darkblue;
+  text-decoration: none;
+  font-weight: bold;
 }
-
-.about p {
-  margin: 5px 0;
-  }
