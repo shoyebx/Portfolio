@@ -1,158 +1,128 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+/* style.css */
 
 body {
-    line-height: 1.6;
-    color: black;
-    background-color: whitesmoke;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: black;
 }
 
-/* Navigation Bar */
 header {
-    background: navy;
-    padding: 20px 0;
-    color: white;
+  background-color: lightblue;
+  padding: 20px;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 20px;
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
+  font-size: 24px;
+  font-weight: bold;
+  color: darkblue;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
 }
 
-.nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
+nav a {
+  text-decoration: none;
+  color: darkblue;
+  font-weight: bold;
 }
 
-.nav-links li a.btn {
-    background: white;
-    color: navy;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-weight: bold;
-}
-
-/* Hero Section */
 .hero {
-    background: lightblue;
-    padding: 100px 20px;
-    text-align: center;
+  background-color: aliceblue;
+  text-align: center;
+  padding: 60px 20px;
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
-.hero p {
-    font-size: 18px;
-    margin-bottom: 20px;
+.hero button {
+  background-color: blue;
+  color: white;
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.hero .btn {
-    background: navy;
-    color: white;
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 20px;
+  background-color: lavender;
 }
 
-/* Common Section Styling */
-.section h2 {
-    text-align: center;
-    font-size: 32px;
-    margin: 40px 0 20px;
+.feature-card {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  text-align: center;
+  width: 150px;
+  font-weight: bold;
 }
 
-/* Feature & Course Cards */
-.feature-cards,
-.course-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    padding: 0 20px 40px;
+.subjects {
+  padding: 40px 20px;
+  background-color: white;
+  text-align: center;
 }
 
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 }
 
-.card h3 {
-    margin-bottom: 10px;
-    color: navy;
+.subject-card {
+  background-color: lightyellow;
+  padding: 20px;
+  border: 1px solid goldenrod;
+  border-radius: 8px;
+  font-weight: bold;
 }
 
-/* Testimonials */
-.testimonials {
-    background: aliceblue;
-    padding: 40px 20px;
+footer {
+  background-color: lightgray;
+  padding: 30px 20px;
+  color: black;
 }
 
-.testimonial {
-    max-width: 700px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    border-left: 5px solid navy;
-    border-radius: 6px;
+.footer-info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-/* Footer */
-.contact {
-    background: navy;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 40px;
+.footer-info h3 {
+  margin-top: 0;
 }
 
-.contact-info h3 {
-    margin-bottom: 10px;
+.quick-links ul {
+  list-style: none;
+  padding: 0;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
-    }
-
-    .feature-cards,
-    .course-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero h1 {
-        font-size: 32px;
-    }
+.quick-links a {
+  text-decoration: none;
+  color: darkblue;
 }
 
+.about p {
+  margin: 5px 0;
+}
