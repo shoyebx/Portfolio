@@ -1,6 +1,11 @@
-/* General Reset */
-body {
+/* Reset */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: Arial, sans-serif;
   background-color: white;
   color: black;
@@ -8,8 +13,8 @@ body {
 
 /* Header */
 header {
-  background-color: lightblue;
-  padding: 15px 30px;
+  padding: 20px;
+  border-bottom: 2px solid lightgray;
 }
 
 .nav-container {
@@ -19,9 +24,9 @@ header {
 }
 
 .logo {
-  font-size: 28px;
   font-weight: bold;
-  color: darkblue;
+  font-size: 24px;
+  color: navy;
 }
 
 nav ul {
@@ -31,108 +36,130 @@ nav ul {
 }
 
 nav a {
-  font-weight: bold;
-  color: darkblue;
   text-decoration: none;
+  color: navy;
+  font-weight: bold;
 }
 
 /* Hero Section */
 .hero {
-  background-color: aliceblue;
   text-align: center;
   padding: 60px 20px;
 }
 
 .hero h1 {
   font-size: 36px;
+  color: navy;
   margin-bottom: 20px;
 }
 
 .hero button {
-  background-color: blue;
+  background-color: slateblue;
   color: white;
   border: none;
   padding: 12px 24px;
-  border-radius: 6px;
   font-size: 16px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
 /* Features */
 .features {
   display: flex;
-  justify-content: space-around;
-  padding: 40px 20px;
-  background-color: lavender;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 20px;
 }
 
-.feature {
+.feature-card {
+  border: 2px solid lightgray;
+  padding: 20px;
   text-align: center;
-  width: 150px;
-  margin: 10px;
+  width: 120px;
+  border-radius: 8px;
+  background-color: ghostwhite;
 }
 
-.feature i {
-  font-size: 40px;
+.feature-card i {
+  font-size: 28px;
   color: navy;
   margin-bottom: 10px;
 }
 
 /* Subjects */
 .subjects {
-  padding: 40px 20px;
   text-align: center;
+  padding: 40px 20px;
 }
 
 .subjects h2 {
-  font-size: 32px;
+  font-size: 28px;
   margin-bottom: 20px;
+  color: navy;
 }
 
-.subject-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 20px;
+.subject-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
-.subject {
-  background-color: lightyellow;
+.subject-card {
+  background-color: lavender;
+  border: 2px solid lightgray;
   padding: 20px;
+  width: 120px;
   border-radius: 8px;
-  border: 1px solid goldenrod;
 }
 
-.subject i {
-  font-size: 30px;
-  color: green;
+.subject-card i {
+  font-size: 28px;
+  color: navy;
   margin-bottom: 10px;
 }
 
 /* Footer */
 footer {
-  background-color: lightgray;
+  border-top: 2px solid lightgray;
   padding: 30px 20px;
-  color: black;
+  background-color: whitesmoke;
 }
 
-.footer-content {
+.footer-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-footer h3 {
-  margin-top: 0;
+.footer-about,
+.footer-links {
+  max-width: 300px;
 }
 
-.quick-links ul {
+footer h3 {
+  color: navy;
+  margin-bottom: 10px;
+}
+
+footer p,
+footer li {
+  margin-bottom: 8px;
+}
+
+.social-icons i {
+  margin-right: 10px;
+  font-size: 20px;
+  color: navy;
+}
+
+.footer-links ul {
   list-style: none;
   padding: 0;
 }
 
-.quick-links a {
-  color: darkblue;
+.footer-links a {
   text-decoration: none;
-  font-weight: bold;
-}
+  color: navy;
+  }
